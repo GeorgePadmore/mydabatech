@@ -17,7 +17,7 @@
     "create-sqlite-db": "shx touch ./db/database.sqlite",
     "drop-sqlite-db": "shx rm ./db/database.sqlite",
     "lint": "eslint ./api/. ./config/. ./test/.",
-    "start": "npm run nodemon",
+    "start": "node ./api/api.js",
     "nodemon": "nodemon --exec npm run dev",
     "prepush": "npm test",
     "pretest": "npm run lint",
