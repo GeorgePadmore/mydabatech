@@ -7,19 +7,16 @@ let database;
 
 switch (process.env.NODE_ENV) {
   case 'production':
-    database = new Sequelize(
-      connection.production.database,
-      connection.production.username,
-      connection.production.password, {
-        host: connection.production.host,
-        dialect: connection.production.dialect,
-        pool: {
-          max: 5,
-          min: 0,
-          idle: 10000,
-        },
-      },
+    database = new Sequelize(process.env.DATABASE_URL, {
+        dialectOptions: {
+          ssl: {
+            require: true,
+            rejectUnauthorized: false
+          }
+        }
+      }
     );
+
     break;
   case 'testing':
     database = new Sequelize(

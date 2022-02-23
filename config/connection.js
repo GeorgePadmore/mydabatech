@@ -1,8 +1,9 @@
 const development = {
-  database: process.env.DB_NAME,
-  username: process.env.DB_USER,
-  password: process.env.DB_PASS,
-  host: process.env.DB_HOST,
+  database: process.env.PG_DATABASE,
+  username: process.env.PG_USER,
+  password: process.env.PG_PASSWORD,
+  host: process.env.PG_HOST,
+  port: process.env.PG_PORT,
   dialect: 'postgres',
 };
 
@@ -11,15 +12,17 @@ const testing = {
   username: 'username',
   password: 'password',
   host: 'localhost',
+  port: process.env.PG_PORT,
   dialect: 'sqlite' || 'mysql' || 'postgres',
 };
 
 const production = {
-  database: process.env.DB_NAME,
-  username: process.env.DB_USER,
-  password: process.env.DB_PASS,
-  host: process.env.DB_HOST || 'localhost',
-  dialect: 'sqlite' || 'mysql' || 'postgres',
+  database: process.env.PG_DATABASE,
+  username: process.env.PG_USER,
+  password: process.env.PG_PASSWORD,
+  port: process.env.PG_PORT,
+  host: process.env.PG_HOST || 'localhost',
+  dialect: process.env.PG_DIALECT || 'postgres',
 };
 
 module.exports = {
