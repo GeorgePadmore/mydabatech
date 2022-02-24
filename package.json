@@ -13,9 +13,7 @@
   },
   "scripts": {
     "project": "node ./scripts/index.js",
-    "dev": "cross-env NODE_ENV=development node ./api/api.js",
-    "create-sqlite-db": "shx touch ./db/database.sqlite",
-    "drop-sqlite-db": "shx rm ./db/database.sqlite",
+    "dev": "cross-env NODE_ENV=development nodemon ./api/api.js",
     "lint": "eslint ./api/. ./config/. ./test/.",
     "start": "node ./api/api.js",
     "nodemon": "nodemon --exec npm run dev",

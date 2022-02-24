@@ -43,11 +43,11 @@ const dbService = (environment, migrate) => {
     try {
       await authenticateDB();
 
-      if (migrate) {
+      // if (migrate) {
         return startMigrateTrue();
-      }
+      // }
 
-      return startMigrateFalse();
+      // return startMigrateFalse();
     } catch (err) {
       return errorDBStart(err);
     }
